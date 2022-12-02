@@ -1,0 +1,64 @@
+---Un produs infinit---
+Pentru aceasta problema prelucram datele de intrare in timpul citirii lor, 
+adica facem conversia in baza 10 (din baza 8) cu ajutorul unei functii
+(convert_8_10). Dupa conversie adaugam in variabilele: p_s (prodsul scalar 
+a celor 2 vectori) numarul a * b, n_a (norma vectorului a) numarul a * a, n_b
+(norma lui b) numarul b * b si schimbam variabilele care retin maximele(pentru
+fiecare vector in parte) daca este nevoie (fie gasim un nou "primul maxim"
+si se modifica ambele maxime, fie gasim un nou "al doilea maxim" si se modifica
+doar al doilea maxim). Dupa citirea completa a datelor (si evident prelucrarea
+lor) afisam ceea ce ne cere cerinta.
+
+
+---Simple query pe litere---
+Pentru aceasta problema prelucram datele de intrare in timpul citirii lor.
+Vom folosi un vector de frecventa(fr) care ne va da raspunsul pentru
+interogarea de tip "Q". Pentru interogarea de tip "T" ne vom folosi de 
+informatiile date de vectorul de frecventa(fr), salvand in alt vector,
+pe care il sortam ulterior, numarul de apartii a fiecarei litere. Astfel,
+parcurgand vectorul nou (sortat descrescator) trecem prin toate literele
+alfabetului englez si afisam "cele mai importante K litere". Pentru 
+interogarea de tip "E", stergem informatiile despre litera citita in 
+variabilele aferente(numarul de aparitii, care implica si numarul de 
+caractere distincte pana in acel moment si numarul de litere in stiva).
+Pentru alerte avem grija sa respectam restrictiile problemei, iar pentru
+fractia ireductibila impartim numitorul si numaratorul prin cel mai mare 
+divizor comun a celor 2 numere si memoram in cazul in care am dat peste
+o noua alerta numarul literei la care s-a declansat alerta.
+
+
+---Gigel si tabla de sah---
+Pentru aceasta problema am folosit o functie numita 'next_cell' care primeste
+ca parametrii pozitia pe tabla de sah (linia si coloana) si distanta
+parcursa pana la acel moment (pe tabla de sah). In cazul in care am ajuns
+pe o pozitie noua (pe tabla de sah) marcam celula respectiva, si daca 
+celula este de culoare negru, atunci ne mutam pe alta linie cu formula aferenta
+, iar daca celula este de culoare alb, atunci ne mutam pe alta coloana cu 
+formula aferenta si apelam in ambele cazuri functia cu noile date. In cazul
+in care am ajuns intr - o celula deja vizitata, se termina problema si afisam
+distana parcursa pana la acea celula impreuna cu linia si coloana aferenta.
+
+
+---Queries again...---
+Pentru aceasta problema vom memora inca de la citirea matricei informatii cu
+privire la ce elemente avem pe linii si coloane si numarul de elemente din
+matrice. Pentru operatia de tip 1 parcurgem toate elementele de la 1 la N^2,
+iar daca am gasit un numar valid il memorez intr-un vector pe care il afisez.
+Pentru operatia de tip 2 folosim acelasi mecanism ca la operatia de tip 1.
+Pentru opratia de tip 3 gasim cu ajutorul formulelor aferente linia si coloana
+de unde incepe careul cerut. Parcurgem careul, iar daca am gasit un element
+de la 1 la N^2 nefolosit, salvam aceasta informatie intr-un vector pe care
+il afisez. Pentru operatia de tip 4 ne vom folosi de operatiile enumerate
+anterior(1, 2 si 3) pentru a gasi elementele valide(din cele 3 operatii
+vom aveam 3 vectori in care pentru fiecare pozitie de la 1 la N^2 vom avea
+valoarea 1 daca valoarea este valida si 0 in caz contrar(mai putin in al
+treilea vector ,unde 0 inseamna valid si 1 nevalid), iar ca un element i sa
+fie valid din cele 3 conditii este ca SI-ul (&&) dintre ans1[i], ans2[i]
+si !ans3[i] sa fie 1, adica elementul i sa fie bun si pe coloana si pe linie
+si pe careu). La operatia de tip 5 actualizam daca se poate valoarea din matrice
+impreuna cu variabilele aferente. Iar la operatia de tip 6 verificam tabloul
+printr - un procedeu care implica operatiile 1, 2 si 3. Astfel parcurgem fiecare
+linie in parte, fiecare coloana in parte si fiecare careu in parte si vedem
+daca reprezinta o varianta valida a jocului, impreuna cu conditia de a avea
+N^4 elemente nenule in tablou.
+
